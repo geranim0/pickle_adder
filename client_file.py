@@ -17,7 +17,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
 
     # Receive data from the server and shut down
     received = sock.recv(1024)
-    unpickled = pickle.loads(received)
+
+    if received:
+        unpickled = pickle.loads(received)
+    else:
+        unpickled = "ERROR NO DATA"
 
 print("Sent:     {}".format(data))
 print("Received: {}".format(unpickled))
