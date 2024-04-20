@@ -29,7 +29,7 @@ if __name__ == "__main__":
     logging.basicConfig(filename='myapp.log', level=logging.INFO)
     logger.info('Started')
 
-    HOST, PORT = "localhost", 9999
+    HOST, PORT = "0.0.0.0", 9999
 
     # Create the server, binding to localhost on port 9999
     with socketserver.TCPServer((HOST, PORT), MyTCPHandler) as server:
