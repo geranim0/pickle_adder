@@ -7,6 +7,8 @@ logger = logging.getLogger(__name__)
 class MyTCPHandler(socketserver.StreamRequestHandler):
 
     def handle(self):
+        logger.info("handling")
+
         # self.rfile is a file-like object created by the handler;
         # we can now use e.g. readline() instead of raw recv() calls
         self.data = self.rfile.readline().strip()
